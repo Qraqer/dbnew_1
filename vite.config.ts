@@ -4,6 +4,7 @@ import path from 'path';
 import readableClassnames from 'vite-plugin-readable-classnames';
 import checker from 'vite-plugin-checker';
 import sassDts from 'vite-plugin-sass-dts';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,6 +17,14 @@ export default defineConfig({
     sassDts({
       enabledMode: ['development'],
       esmExport: true,
+    }),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/static/favicon/**/*',
+          dest: './assets/favicon'
+        },
+      ]
     }),
   ],
   base: '',

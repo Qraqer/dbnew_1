@@ -1,5 +1,8 @@
+@import url('./static/font.css');
+
 body {
   margin: 0;
+  font-family: 'SuisseIntl', 'Arial', serif;
 }
 
 /* Fix for scrollbar */
